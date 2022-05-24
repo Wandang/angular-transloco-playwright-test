@@ -6,7 +6,13 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "e2e": "FRONTEND_URL=http://localhost:4200 npx playwright test --config=e2e/playwright.config.ts",
+    "e2e-debug": "PWDEBUG=1 FRONTEND_URL=http://localhost:4200 npx playwright test --config=e2e/playwright.config.ts",
+    "e2e-debug-extra": "DEBUG=pw:api PWDEBUG=1 FRONTEND_URL=http://localhost:4200 npx playwright test --config=e2e/playwright.config.ts",
+    "e2e-headless": "FRONTEND_URL=http://localhost:4200 npx playwright test --config=e2e/playwright-headless.config.ts",
+    "e2e-record": "npx playwright codegen --timeout=30000 http://localhost:4200",
+    "e2e-show-trace": "npx playwright show-trace e2e/trace/trace.zip"
   },
   "private": true,
   "dependencies": {
@@ -18,6 +24,7 @@
     "@angular/platform-browser": "~13.0.0",
     "@angular/platform-browser-dynamic": "~13.0.0",
     "@angular/router": "~13.0.0",
+    "@ngneat/transloco": "^4.0.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -26,6 +33,7 @@
     "@angular-devkit/build-angular": "~13.0.3",
     "@angular/cli": "~13.0.3",
     "@angular/compiler-cli": "~13.0.0",
+    "@playwright/test": "^1.17.1",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
     "jasmine-core": "~3.10.0",
