@@ -8,5 +8,12 @@ test.describe(`testing playwright`, () => {
     translocoSvc = loadTranslocoService();
   });
 
-  test('first test', async ({ page }) => {});
+  test('first test', async ({ page }) => {
+    await Promise.all([
+      page.click(
+        `button:has-text('${translocoSvc.translate('somekey.somenestedkey')}')`
+      ),
+      page.waitForNavigation({ url: 'someurl' }),
+    ]);
+  });
 });
