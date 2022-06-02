@@ -1,4 +1,4 @@
-import { PlaywrightTestConfig } from '@playwright/test';
+import { type PlaywrightTestConfig } from '@playwright/test';
 import * as os from 'os';
 const cpuCount = os.cpus().length;
 const slowMotionMs = 0;
