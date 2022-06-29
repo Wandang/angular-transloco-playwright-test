@@ -1,7 +1,7 @@
 {
   "name": "angular-transloco-playwright-test",
   "version": "0.0.0",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -11,6 +11,7 @@
     "e2e": "FRONTEND_URL=http://localhost:4200 npx playwright test --config=e2e/playwright.config.ts",
     "e2e-debug": "PWDEBUG=1 FRONTEND_URL=http://localhost:4200 npx playwright test --config=e2e/playwright.config.ts",
     "e2e-debug-extra": "DEBUG=pw:api PWDEBUG=1 FRONTEND_URL=http://localhost:4200 npx playwright test --config=e2e/playwright.config.ts",
+    "e2e-debugging": "DEBUG=pw:api PWDEBUG=1 FRONTEND_URL=http://localhost:4200 npx playwright test",
     "e2e-headless": "FRONTEND_URL=http://localhost:4200 npx playwright test --config=e2e/playwright-headless.config.ts",
     "e2e-record": "npx playwright codegen --timeout=30000 http://localhost:4200",
     "e2e-show-trace": "npx playwright show-trace e2e/trace/trace.zip"
@@ -25,7 +26,7 @@
     "@angular/platform-browser": "~13.0.0",
     "@angular/platform-browser-dynamic": "~13.0.0",
     "@angular/router": "~13.0.0",
-    "@ngneat/transloco": "^4.0.0",
+    "@ngneat/transloco": "^4.1.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
